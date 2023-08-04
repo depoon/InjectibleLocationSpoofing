@@ -11,20 +11,17 @@
 
 @implementation PatchLoader
 
-static void __attribute__((constructor)) initialize(void){
+static void __attribute__((constructor)) initialize(void) {
     NSLog(@"==== Code Injection in Action====");
-    
+
     [LocationSwizzler turnOnSwizzleForCoordinate];
-    
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         static PatchUIManager *patchUIManager;
-        patchUIManager = [PatchUIManager new];
+        patchUIManager = [[PatchUIManager alloc] init];
         [patchUIManager hijackAppWindow];
-        
-    });        
-    
-    
+    });
+
 }
 
 @end
