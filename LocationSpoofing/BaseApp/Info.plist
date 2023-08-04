@@ -45,5 +45,7 @@
 	<string>Always using Location</string>
 	<key>NSLocationUsageDescription</key>
 	<string>App Uses Location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use??????</string>
 </dict>
 </plist>
